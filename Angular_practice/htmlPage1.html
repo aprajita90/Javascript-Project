@@ -1,0 +1,38 @@
+<!Doctype html>
+<html ng-app="myModule">
+<head>
+	<script src="/Users/aprajitajain/Javascript-Project/Angular_practice/Script_file/angular.js"></script>
+	<script src="/Users/aprajitajain/Javascript-Project/Angular_practice/Script_file/script.js"></script>
+</head>
+<body >
+    <div>
+    	{{10===20}}
+    </div>
+    <div>
+    	10+20={{10+20}}
+    </div>
+    <div>
+    	{{ {name: 'David', age: '30'}.name }}
+    </div>
+    <div>
+    	{{ ['David', 'Sara', 'App'][1] }}
+
+    </div>
+    <div ng-controller="myController">
+    <!-- <div>
+    	{{message}}	
+    </div> -->
+    <div>
+    	First Name:{{ employee.firstName }}
+    </div>
+    <div>
+    	Last Name: {{ employee.lastName }}
+    </div>
+    <div>
+    	Gender: {{employee.gender}}
+    </div>
+</div>
+
+</body>
+
+</html>
