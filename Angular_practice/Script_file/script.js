@@ -22,6 +22,14 @@ myApp.controller("myController", function($scope){
 		firstName : "David",
 		lastName: "Json",
 		gender: "Male"
-	}
+	},
+	country = {
+		name : "India",
+		capital: "Delhi",
+		flag: "/Image/delhi-flag.png"
+	};
+
 	$scope.employee = employee;
+	$scope.country = country;
+	$scope.message = "Angular practice";
 });
