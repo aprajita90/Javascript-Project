@@ -1,10 +1,10 @@
 <!Doctype html>
-<html ng-app="myModule">
+<html>
 <head>
 	<script src="/Users/aprajitajain/Javascript-Project/Angular_practice/Script_file/angular.js"></script>
 	<script src="/Users/aprajitajain/Javascript-Project/Angular_practice/Script_file/script.js"></script>
 </head>
-<body >
+<body ng-app="myModule" style="font-family:Arial">
     <div>
     	{{10===20}}
     </div>
@@ -37,14 +37,47 @@
     <div>
         Capital: {{country.capital}}
     </div>
-    <div>
+    <!-- <div>
         <img src="{{country.flag}}" alt"{{country.name+ 'Flag'}}" style="height:100px; width:200px" />
-    </div>
+    </div> -->
+    
+    <!-- we use ng-mode directive -->
     <input type = "text" ng-model ="message">
     <br /><br />
     {{message}}
-</div>
 
+    <!-- we use ng-repeat and ng-init directive -->
+
+<table>
+    <thead>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Gender</th>
+            <th>Salary</th>
+       </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="employee in employees">
+            <td>{{employee.firstName}}</td>
+            <td>{{employee.lastName}}</td>
+            <td>{{employee.gender}}</td>
+            <td>{{employee.salary}}</td>
+        </tr>
+    </tbody>
+</table>
+<ul>
+    <li ng-repeat="country in countries" ng-init="parentIndex=$index">
+        {{country.name}} - Index={{$index}}
+        <ul>
+            <li ng-repeat="city in country.cities">
+                {{city.name}} - Parent Index = {{parentIndex}}, Index={{$index}}
+            </li>
+        </ul>
+    </li>
+</ul>
+
+</div>
 </body>
 
 </html>
