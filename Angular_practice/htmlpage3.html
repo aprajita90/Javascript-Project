@@ -8,31 +8,29 @@
 <body ng-app="myModule">
 	<div ng-controller="myController">
 		<!-- filter in angularjs -->
-		Row to display: <input type="number" step="1", min="0" max="5" ng-model="rowLimit" />
+		Row to display: <input type="number" step="1", min="0" max="5" ng-model="rowLimit" /> &nbsp;
 		<!-- sorting data in angularjs -->
-		sSort By : <select ng-model="sortColumn">
+		<!-- Sort By : <select ng-model="sortColumn">
 						<option value="name">Name ASC</option>
 						<option value="+dateOfBirth">Date Of Birth ASC</option>
 						<option value="+gender">Gender ASC</option>
 						<option value="-salary">Salary DESC</option>
-				   </select>
+				   </select></br></br> -->
 		<table>
 			<thead>
 				<tr>
-					<th>Name</th>
-					<th>Date of Birth</th>
-					<th>Gender</th>
-					<th>Salary(number)</th>
-					<th>Salary(current)</th>
+					<th ng-click="sortData('name')">Name <div ng-class="getSortClass('name')"></div></th>
+					<th ng-click="sortData('dateOfBirth')">Date of Birth <div ng-class="getSortClass('dateOfBirth')"></div></th>
+					<th ng-click="sortData('gender')">Gender <div ng-class="getSortClass('gender')"></div></th>
+					<th ng-click="sortData('salary')">Salary<div ng-class="getSortClass('salary')"></div></th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="employee in employees | limitTo: rowLimit |  orderBy: sortColumn" >
+				<tr ng-repeat="employee in employees | limitTo: rowLimit |  orderBy: sortColumn:reverseSort" >
 					<td>{{employee.name | uppercase}}</td>
 					<td>{{employee.dateOfBirth | date: "MM/dd/yyyy"}}</td>
 					<td>{{employee.gender | lowercase}}</td>
 					<td>{{employee.salary | number: 2}}</td>
-					<td>{{employee.salary | currency:"£":1}}</td>
 				</tr>
 			</tbody>
 		</table>
