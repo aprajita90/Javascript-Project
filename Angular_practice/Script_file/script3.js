@@ -16,4 +16,5 @@ var myApp = angular
 				];
 				$scope.employees = employees;
 				$scope.rowLimit =3;
-			})
+				$scope.sortColumn=name;
+			});
