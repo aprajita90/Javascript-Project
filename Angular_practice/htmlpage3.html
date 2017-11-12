@@ -16,9 +16,9 @@
 						<option value="+gender">Gender ASC</option>
 						<option value="-salary">Salary DESC</option>
 				   </select></br></br> -->
-		<input type="text" placeholder="Search name" ng-model="searchText.name" />
-		<input type="text" placeholder="Search city" ng-model="searchText.city" />
-		<input type="checkbox" ng-model="exactMatch" /> Exact Match
+		<input type="text" placeholder="Search city and name" ng-model="searchText" />
+		<!-- <input type="text" placeholder="Search city" ng-model="searchText.city" />
+		<input type="checkbox" ng-model="exactMatch" /> Exact Match -->
 	</br></br>
 		<table>
 			<thead>
@@ -31,7 +31,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="employee in employees | limitTo: rowLimit |  orderBy: sortColumn:reverseSort | filter:searchText:exactMatch" >
+				<tr ng-repeat="employee in employees | limitTo: rowLimit |  orderBy: sortColumn:reverseSort | filter:search" >
 					<td>{{employee.name}}</td>
 					<td>{{employee.dateOfBirth | date: "MM/dd/yyyy"}}</td>
 					<td>{{employee.gender | lowercase}}</td>
