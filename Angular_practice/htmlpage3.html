@@ -3,6 +3,7 @@
 <head>
 	<script src="./Script_file/angular.js"></script>
 	<script src="./Script_file/script3.js"></script>
+	<script src="./Script_file/filterFunction.js"></script>
 	<link rel="stylesheet" type="text/css" href="Style.css">
 </head>
 <body ng-app="myModule">
@@ -34,7 +35,7 @@
 				<tr ng-repeat="employee in employees | limitTo: rowLimit |  orderBy: sortColumn:reverseSort | filter:search" >
 					<td>{{employee.name}}</td>
 					<td>{{employee.dateOfBirth | date: "MM/dd/yyyy"}}</td>
-					<td>{{employee.gender | lowercase}}</td>
+					<td>{{employee.gender | lowercase | gender}}</td>
 					<td>{{employee.salary | number: 2}}</td>
 					<td>{{employee.city}}</td>
 				</tr>

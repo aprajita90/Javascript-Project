@@ -1,4 +1,4 @@
-/// <reference path="/Users/aprajitajain/Javascript-Project/Angular_practice/Script_file/angular.js"/>
+/// <reference path="./Script_file/angular.js"/>
 
 // var myApp = angular.module("myModule", []);//create a module
 
